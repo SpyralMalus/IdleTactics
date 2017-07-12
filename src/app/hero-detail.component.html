@@ -1,0 +1,28 @@
+<div *ngIf="hero">
+    <h2>{{hero.name}} details!</h2>
+    <div><label>id: </label>{{hero.id}}</div>
+    <div>
+        <label>name: </label>
+        <input [(ngModel)]="hero.name" placeholder="name">
+    </div>
+    <div><label>Lvl: </label>{{hero.lvl}}</div>
+    <div><label>Exp: </label>{{hero.exp}}</div>
+    <div><label>HP: </label>{{hero.hp}}</div>
+    <div><label>MP: </label>{{hero.mp}}</div>
+    <div><label>Str: </label>{{hero.str}}</div>
+    <div><label>Int: </label>{{hero.int}}</div>
+    <div><label>Vit: </label>{{hero.vit}}</div>
+    <div><label>Wis: </label>{{hero.wis}}</div>
+    <div><label>Dex: </label>{{hero.dex}}</div>
+    <div><label>Cha: </label>{{hero.cha}}</div>
+    <div><label>Luk: </label>{{hero.luk}}</div>
+    <p>&nbsp;</p>
+    <div><label>In Party: </label>{{hero.inParty}} 
+        <button (click)="updateParty()">
+            {{hero.inParty == false ? 'Add to Party' : 'Expel from Party'}}
+        </button>
+    </div>
+    <div><label>Is Alive: </label>{{hero.isAlive}}</div>
+    <button (click)="goBack()">Back</button>
+    <button (click)="save()">Save</button>
+</div>

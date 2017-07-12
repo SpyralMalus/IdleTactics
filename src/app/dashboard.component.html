@@ -1,0 +1,43 @@
+<h3>Current Party</h3>
+<div class="grid grid-pad">
+    <a *ngFor="let hero of heroes" [routerLink]="['/detail', hero.id]" class="col-1-4">
+        <div class="module hero">
+            <h4>{{hero.name}}</h4>
+            <div class="hero-lvl">LVL: {{hero.lvl}}</div>
+            <div><label>HP:</label><progress class="hp-bar" value="{{hero.hp}}" max="{{hero.maxHp}}"></progress></div>
+            <div><label>MP:</label><progress class="mp-bar" value="{{hero.mp}}" max="{{hero.maxMp}}"></progress></div>
+            <div><label>SPD:</label><progress class="spd-bar" value="{{hero.ct}}" max="{{hero.baseCt}}"></progress></div>
+            <div><label>EXP:</label><progress class="exp-bar" value="{{hero.percentageToLvl}}" max="100"></progress></div>
+        </div>
+    </a>
+</div>
+<!--<div><hero-search></hero-search></div>-->
+
+<div class="no-float"></div>
+
+<h3>Current Location</h3>
+<h4 *ngIf="location">{{location.name}}</h4>
+<h5>Current Activity</h5>
+<div class="no-float"></div>
+
+<ng-container *ngIf="activity">
+    <div class="grid grid-pad">
+        <div *ngFor="let actor of activity.enemies" class="col-1-4">
+            <div class="module hero">
+                <h4>{{actor.name}}</h4>
+                <div class="hero-lvl">LVL: {{actor.lvl}}</div>
+                <div><label>HP:</label><progress class="hp-bar" value="{{actor.hp}}" max="{{actor.maxHp}}"></progress></div>
+                <div><label>MP:</label><progress class="mp-bar" value="{{actor.mp}}" max="{{actor.maxMp}}"></progress></div>
+                <div><label>SPD:</label><progress class="spd-bar" value="{{actor.ct}}" max="{{actor.baseCt}}"></progress></div>
+            </div>
+        </div>
+    </div>
+    <div class="no-float"></div>
+    <p>&nbsp;</p>
+    <h6>{{activity.name}}<span>{{dots}}</span></h6>
+</ng-container>
+
+<button (click)="updateProgress(5)">Beg</button>
+<p><progress #progBar id="progress-bar" value="{{progress}}" max="100"></progress></p>
+<p>Gold: {{gold}}</p>
+

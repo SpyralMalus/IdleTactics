@@ -1,0 +1,23 @@
+<h2>My Heroes</h2>
+<div>
+    <label>Hero Name:</label> <input #heroName />
+    <button (click)="add(heroName.value); heroName.value=''">
+        Create
+    </button>
+</div>
+<ul class="heroes">
+    <ng-container *ngFor="let hero of heroes">
+        <li *ngIf="hero.isVisible === true" [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
+            <span class="badge">{{hero.id}}</span>
+            <span>{{hero.name}}</span>
+        <!--  <input type="checkbox" class="add-to-party" (onchange)="addToParty(hero);"/> -->
+            <button class="delete" (click)="delete(hero); $event.stopPropagation()">X</button>
+        </li>
+    </ng-container>
+</ul>
+<div *ngIf="selectedHero">
+    <h2>
+    {{selectedHero.name | uppercase }} is my hero
+    </h2>
+    <button (click)="gotoDetail()">View Details</button>
+</div>

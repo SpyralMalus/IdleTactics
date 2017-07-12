@@ -1,0 +1,137 @@
+[class*='col-'] {
+  float: left;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+[class*='col-']:last-of-type {
+  padding-right: 0;
+}
+a {
+  text-decoration: none;
+}
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+h3 {
+  text-align: center; margin-bottom: 0;
+}
+h4 {
+  position: relative;
+}
+.grid {
+  margin: 0;
+}
+.col-1-4 {
+  width: 25%;
+}
+.module {
+  padding: 20px;
+  text-align: center;
+  color: #eee;
+  max-height: 120px;
+  min-width: 120px;
+  background-color: #607D8B;
+  border-radius: 2px;
+}
+.module.hero {
+  padding: 5px 20px 20px 20px;
+}
+.module:hover {
+  background-color: #EEE;
+  cursor: pointer;
+  color: #607d8b;
+}
+.hero h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.hero .hero-lvl {
+  font-size: 12px;
+} 
+.hero progress {
+  width: 80%;
+  height: 5px;
+  vertical-align: super;
+}
+.hero label {
+  width: 20% !important;
+  font-size: 10px;
+  float: left;
+}
+
+progress.hp-bar {
+  background-color: red;
+}
+progress.hp-bar::-webkit-progress-bar {
+  background-color: white;
+}
+progress.hp-bar::-webkit-progress-value {
+  background-color: red;
+} 
+progress.hp-bar::-moz-progress-bar {
+  background-color: red;
+}
+
+progress.mp-bar {
+  background-color: royalblue;
+}
+progress.mp-bar::-webkit-progress-bar {
+  background-color: white;
+}
+progress.mp-bar::-webkit-progress-value {
+  background-color: royalblue;
+} 
+progress.mp-bar::-moz-progress-bar {
+  background-color: royalblue;
+}
+
+progress.spd-bar {
+  background-color: green;
+}
+progress.spd-bar::-webkit-progress-bar {
+  background-color: white;
+}
+progress.spd-bar::-webkit-progress-value {
+  background-color: green;
+} 
+progress.spd-bar::-moz-progress-bar {
+  background-color: green;
+}
+
+progress.exp-bar {
+  background-color: gold;
+}
+progress.exp-bar::-webkit-progress-bar {
+  background-color: white;
+}
+progress.exp-bar::-webkit-progress-value {
+  background-color: gold;
+} 
+progress.exp-bar::-moz-progress-bar {
+  background-color: gold;
+}
+
+.grid-pad {
+  padding: 10px 0;
+}
+.grid-pad > [class*='col-']:last-of-type {
+  padding-right: 20px;
+}
+.no-float {
+  clear: both;
+}
+@media (max-width: 600px) {
+  .module {
+    font-size: 10px;
+    max-height: 75px; }
+}
+@media (max-width: 1024px) {
+  .grid {
+    margin: 0;
+  }
+  .module {
+    min-width: 60px;
+  }
+}
